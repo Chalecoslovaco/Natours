@@ -21,11 +21,20 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0);
         transition: all .5s .2s;
+
+        @include respond(phone) {
+            display: block;
+            height: 70vh;
+        }
     }
 
     &__left {
         width: 33.3333333%;
         display: table-cell;
+
+        @include respond(phone) {
+            display: inline;
+        }
     }
 
     &__right {
@@ -38,6 +47,18 @@
     &__img {
         display: block;
         width: 100%;
+
+        @include respond(phone) {
+            display: inline;
+            width: 45%;
+            border-radius: 5px;
+            box-shadow: 0 1rem 3rem rgba($color-black, .3);
+            transform: scale(1.1);
+
+            &:last-of-type {
+                transform: translateX(-20%) translateY(10%) scale(1.1);
+            }
+        }
     }
 
     &__text {
